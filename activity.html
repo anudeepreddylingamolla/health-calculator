@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Include the navigation bar -->
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="bmi.html">BMI Calculator</a>
+    <a href="bmr.html">BMR Calculator</a>
+    <a href="activity.html">Activity Calculator</a>
+    <a href="workouts.html">Workouts</a>
+  </nav>
+
+  <h1>Activity Calculator</h1>
+  <p class="notice">Please note that the values provided are rough estimates and may not accurately reflect the actual energy expenditure for every individual. The actual calories burned during an activity can be influenced by factors such as fitness level, and activity intensity.</p>
+  <form>
+    <label for="activity">Select an activity:</label>
+    <select id="activity" required>
+      <option value="running">Running</option>
+      <option value="jumprope">Jump Rope</option>
+      <option value="walking">Walking</option>
+      <option value="badminton">Badminton</option>
+      <option value="swimming">Swimming</option>
+      <option value="cycling">Cycling</option>
+      <option value="kickboxing">Kickboxing</option>
+      <option value="stair_climbing">Stair Climbing</option>
+      <option value="weight_training">Weight Training</option>
+      <option value="yoga">Yoga</option>
+    </select>
+
+    <label for="duration">Duration (in minutes):</label>
+    <input type="number" id="duration" required>
+
+    <label for="weight">Weight (in kg):</label>
+    <input type="number" id="weight" required>
+
+    <button type="button" onclick="calculateCaloriesBurned()">Calculate Calories Burned</button>
+  </form>
+
+  <p>Calories burned during the selected activity: <span id="caloriesBurnedResult"></span> calories</p>
+
+  <script>
+    function calculateCaloriesBurned() {
+      const activity = document.getElementById('activity').value;
+      const duration = parseInt(document.getElementById('duration').value);
+      const weight = parseFloat(document.getElementById('weight').value);
+
+      const activities = {
+        running: 9.8,
+        jumprope: 11.0,
+        walking: 4.5,
+        badminton: 7.0,
+        swimming: 8.5,
+        cycling: 8.0,
+        kickboxing: 12.5,
+        stair_climbing: 9.0,
+        weight_training: 5.5,
+        yoga: 3.0,
+      };
+
+      if (duration > 0 && weight > 0 && activities.hasOwnProperty(activity)) {
+        const caloriesBurned = (activities[activity] * weight * duration) / 60;
+        document.getElementById('caloriesBurnedResult').textContent = caloriesBurned.toFixed(2);
+      } else {
+        document.getElementById('caloriesBurnedResult').textContent = "Invalid input";
+      }
+    }
+  </script>
+</body>
+</html>

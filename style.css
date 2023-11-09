@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+/* CSS Reset - Optional: To remove default browser styles */
+body, h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set the background image for the body element */
+body {
+  /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
+  background-image: url('back.jpg');
+
+  /* Optional: Set the background image to cover the entire viewport */
+  background-size: cover;
+
+  /* Optional: Center the background image vertically and horizontally */
+  background-position: center center;
+
+  /* Optional: Add a background color as a fallback or when the image is loading */
+  background-color: #f1f1f1;
+}
+
+/* Navigation bar styles */
+nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Active link style */
+nav a.active {
+  background-color: #4CAF50;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+span#bmrResult {
+  color: #4CAF50;
+}
+.paragraph {
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paragraph p {
+  line-height: 1.6;
+}

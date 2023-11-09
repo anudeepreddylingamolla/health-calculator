@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workouts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Include the navigation bar -->
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="bmi.html">BMI Calculator</a>
+    <a href="bmr.html">BMR Calculator</a>
+    <a href="activity.html">Activity Calculator</a>
+    <a href="workouts.html">Workouts</a>
+  </nav>
+
+  <h1>Workouts</h1>
+
+  <div class="equipment-options">
+    <button onclick="showNoEquipmentWorkouts()">No Equipment Workout Plan</button>
+    <button onclick="showDumbellWorkouts()">Only Dumbells Workout Plan</button>
+    <button onclick="showGymWorkouts()">Gym Workout Plan </button>
+  </div>
+
+  <div id="workoutList">
+    <!-- Workout list content will be dynamically loaded here based on user selection -->
+  </div>
+
+  <script>
+    function showNoEquipmentWorkouts() {
+      // Use JavaScript to dynamically load and display the list of no equipment workouts
+      // You can add a list of workouts and downloadable PDF links here
+      document.getElementById('workoutList').innerHTML = `
+        <h2>No Equipment Workouts</h2>
+        <ul>
+          <li><a href="noequip.pdf" download>Workout 1</a></li>
+          
+          <!-- Add more workout links as needed -->
+        </ul>
+      `;
+    }
+
+    function showDumbellWorkouts() {
+      // Use JavaScript to dynamically load and display the list of dumbell workouts
+      // You can add a list of workouts and downloadable PDF links here
+      document.getElementById('workoutList').innerHTML = `
+        <h2>Dumbell Workouts</h2>
+        <ul>
+          <li><a href="dumbellworkout.pdf" download>Workout 1</a></li>
+         
+          <!-- Add more workout links as needed -->
+        </ul>
+      `;
+    }
+
+    function showGymWorkouts() {
+      // Use JavaScript to dynamically load and display the list of gym workouts
+      // You can add a list of workouts and downloadable PDF links here
+      document.getElementById('workoutList').innerHTML = `
+        <h2>Gym Workouts</h2>
+        <ul>
+          <li><a href="gymguide.pdf" download>Workout 1</a></li>
+          
+          <!-- Add more workout links as needed -->
+        </ul>
+      `;
+    }
+  </script>
+</body>
+</html>
